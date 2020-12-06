@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Let's Chat Room</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=-But56yxyKsEL9MIrL4J1fsac_5GVv4sDYkWQGLIqQBJtXAgWfH01jY7PjLPH1fY3Au68cLaF21N-_xlukL-osUWW-X_osaoEAx4pNiQZJ_4pMizLOe0zEsc_rpb8UZjmaRmM0gADHfEjQs57znYGwjMJ2TiSn74ffiabE3YJB7CgdY36Yp4RIYZzBjGRYO12KNP6kJT8_s_YWWWOZtpwFyOskJdNrzWD0pYmDsPyWsaLrL7dahkdoURx08Zt8UCiXawBT5V7EP3ol6-RXs2RvQz1d-V6Tvxx6DM_qjaegtipMKCych7jWPqbkbP_Oclsa5uZCG0W4EGQvhQsFSv7Q" charset="UTF-8"></script>
+<link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9kb2MtMTAtMWstZG9jcy5nb29nbGV1c2VyY29udGVudC5jb20vZG9jcy9zZWN1cmVzYy9lM2ZwbGo1MjcyMTVkYjYyaGZqdTUwbDhlamNlNWhzMC9ydXM4Yzd2NDFqNGVqNGlvdmplZXFzOGdtZ3Z1amVqcC8xNjA3MTY2MTUwMDAwLzAxOTYxNTI0MjExNjY2MTUxNzI0LzAzMjM1NTE4NTI1NDI4MjYxNzAzLzFiZUc5TW9lalBMeXJFS1Y2QkJQWUF6WVpWNnZnTldfdz9lPWRvd25sb2FkJmF1dGh1c2VyPTA"/>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div class="container">
+<button id="logout" onclick="logout()" class="glyphicon glyphicon-log-out btn btn-danger">Logout</button>
+	<center>
+		<h1 class="header">	
+			Let's Chat	
+			<sup>
+				<img src="m2.png">
+			</sup>
+		</h1>
+		<h3 class="color_white" id="h3ID"></h3>
+		<div class="form-group input_div_room_page">
+			<label>#AddRoom:</label>
+			<input type="text" id="input_roomname" class="form-control" placeholder="Enter #RoomName">
+
+		</div>
+		<button class="btn btn-success" onclick="addroom_button()">#AddRoom</button>
+		<h3 class="color_white">#TrendingRooms</h3>
+		<div id="output"></div>
+	</center>
+</div>
+<script src="kwitter_room.js"></script>
+</body>
+</html>
