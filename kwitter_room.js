@@ -11,13 +11,29 @@ var firebaseConfig = {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
+    User_Name=localStorage.getItem("User_Name");
+
+    function AddRoom() {
+      Room_Name=document.getElementById("input_roomname").value;
+      firebase.database().ref("/").child(Room_Name).update({
+            purpose:"Adding The Room Name..."
+      });
+      localStorage.setItem("Room_Name",Room_Name);
+      window.location="kwitter_page.html";
+}
+
+
+function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";
+snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
        Room_names = childKey;
       //Start code
-
+      console.log("RoomName-"+Room_names);
+      row="<div class='Room_Name' id="+Room_names+" onclick='RedirectToRoomName(this.id)'>"+Room_names+"</div><hr>";
+      document.getElementById("output").innerHTML+=row;
       //End code
       });});}
 getData();
+
 
 function logout() {
       window.location="index.html";
