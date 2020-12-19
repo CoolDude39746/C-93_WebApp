@@ -3,6 +3,7 @@
 var firebaseConfig = {
       apiKey: "AIzaSyDDfBeC8vkRfS_ko4MeLkSujptP8j0DuVY",
       authDomain: "kwitter-firebase.firebaseapp.com",
+      databaseURL: "https://kwitter-firebase-default-rtdb.firebaseio.com",
       projectId: "kwitter-firebase",
       storageBucket: "kwitter-firebase.appspot.com",
       messagingSenderId: "735127417925",
@@ -20,7 +21,7 @@ var firebaseConfig = {
       });
       localStorage.setItem("Room_Name",Room_Name);
       window.location="kwitter_page.html";
-}
+    }
 
 
 function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";
@@ -34,7 +35,8 @@ snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
       });});}
 getData();
 
-
 function logout() {
+      localStorage.removeItem("User_Name");
+      localStorage.removeItem("Room_Name");
       window.location="index.html";
 }
